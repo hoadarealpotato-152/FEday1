@@ -1,0 +1,69 @@
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .card-front {
+    background-color: #598998;
+    color: white;
+  }
+  
+  .card-back {
+    background-color: #b7e7d3;
+    color: #333;
+    transform: rotateY(180deg);
+  }
+  
+  .avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .name {
+    font-size: 1.5em;
+  }
+  
+  .age-gender {
+    font-size: 1.1em;
+  }
+  
+  .details-header {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 1.1em;
+  }
+  

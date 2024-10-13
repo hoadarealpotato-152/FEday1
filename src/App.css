@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #dedede;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+  justify-content: center;
+}
+
+h1 {
+  color: #333;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.reload-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Màu nền xanh lá cây */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Xóa viền mặc định */
+  border-radius: 5px; /* Bo tròn các góc */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển màu và phóng to khi hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng đổ */
+  margin-bottom: 10px;
+}
+
+.reload-btn:hover {
+  background-color: #45a049; /* Đổi màu khi hover */
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.reload-btn:active {
+  transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn nút */
+}
+
+.reload-btn:focus {
+  outline: none; /* Xóa viền mặc định khi focus */
+}
