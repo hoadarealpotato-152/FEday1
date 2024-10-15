@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import UserCard from './components/UserCard/UserCard'
+import UserCard from './components/UserCard/UserCard';
 import axios from 'axios';
+import Button from 'antd';
+import PlusOutlined from '@ant-design/icons'
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
@@ -22,19 +24,19 @@ function App() {
   //     });
   // }, []);
 
-  const fetchUsers = () => {
-    setLoading(true);
-    setError(null);
-    axios.get('https://randomuser.me/api/?results=10')
-      .then((response) => {
-        setUsers(response.data.results);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      });
-  };
+  // const fetchUsers = () => {
+  //   setLoading(true);
+  //   setError(null);
+  //   axios.get('https://randomuser.me/api/?results=10')
+  //     .then((response) => {
+  //       setUsers(response.data.results);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     });
+  // };
 
   useEffect(() => {
     // fetchUsers();
@@ -70,7 +72,10 @@ function App() {
   return (
     <div className="app">
       <h1>User Cards</h1>
-      <button className="reload-btn" onClick={fetchUsers}>↻</button>
+      {/* <button className="reload-btn" onClick={fetchUsers}>↻</button> */}
+      <Button type="primary" shape="circle">
+        <PlusOutlined />
+      </Button>
       <div className="cards-container">
         {users.map((user) => (
           <UserCard key={user.login.uuid} user={user} />
@@ -91,7 +96,7 @@ const saveUsersToStorage = (users) => {
   localStorage.setItem('users',JSON.stringify(users));
 }
 
-const updateUsers = (updateUsers) => {
-  setUsers(updateUsers);
-  saveUsersToStorage(updateUsers);
-}
+// const updateUsers = (updateUsers) => {
+//   setUsers(updateUsers);
+//   saveUsersToStorage(updateUsers);
+// }
